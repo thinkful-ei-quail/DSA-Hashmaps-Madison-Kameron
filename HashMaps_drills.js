@@ -37,6 +37,22 @@ function main() {
         console.log(map2.get(str3));
     };
 
+    deleteAll = (str) => {
+       var newObj = {};
+       let answer = '';
+       for(let i = 0; i < str.length; i++){
+           if(str[i] in newObj){
+               i++
+           }
+           newObj[str[i]] = true;
+       }
+       for(var key of Object.keys(newObj)){
+         answer+=key
+       }
+       console.log(answer)
+    }
+    deleteAll('google');
 }
 
 main();
+
