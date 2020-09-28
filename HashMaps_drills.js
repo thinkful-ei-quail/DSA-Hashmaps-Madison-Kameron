@@ -1,3 +1,5 @@
+const LinkedList = require('./LinkedList');
+
 const HashMap = require('./HashMap');
 
 function main() {
@@ -88,6 +90,17 @@ function main() {
 
     sortString = (str) => {
         return str.split('').sort().join(''); 
+    }
+
+    chainedList = (arr) => {
+        let result = {};
+        for(let i = 0; i < arr.length; i++) {
+            if(result[arr[i]]){
+                result[current].push(array[i]);
+            } else {
+                result[current] = [array[i]];
+            }
+        }
     }
 
 }
