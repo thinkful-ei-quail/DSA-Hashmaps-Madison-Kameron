@@ -51,7 +51,45 @@ function main() {
        }
        console.log(answer)
     }
-    deleteAll('google');
+
+    palindrome = (str) => {
+        let obj = {};
+        let odd = 0;
+        for(let i = 0; i < str.length; i++) {
+            if(obj[str[i]] === undefined){
+                obj[str[i]] = 1;
+            } else {
+                obj[str[i]]++
+            }
+        }
+        for(var key of Object.keys(obj)){
+            if(obj[key] % 2 === 1) {
+                odd++
+            }
+        }
+        if(odd > 1) {
+            return false;
+        }
+        return true;
+    }
+
+    anagramGrouping = (array) => {
+        let result = {};
+        for(let i = 0; i<array.length; i++) {
+            let current = sortString(array[i]);
+            if(result[current]){
+                result[current].push(array[i]);
+            } else {
+                result[current] = [array[i]];
+            }
+        }
+        return result;
+    }
+
+    sortString = (str) => {
+        return str.split('').sort().join(''); 
+    }
+
 }
 
 main();
